@@ -1,14 +1,20 @@
+import 'package:covid19/src/providers/covid_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class UpdateButton extends StatelessWidget {
+  CovidProvider _covidProvider;
+
   @override
   Widget build(BuildContext context) {
+    _covidProvider = Provider.of<CovidProvider>(context);
+
     return Align(
       alignment: Alignment.centerRight,
       child: GestureDetector(
         onTap: () {
-          print("Actualizando lista");
+          _covidProvider.getSummaryData();
         },
         child: Container(
           decoration: BoxDecoration(
