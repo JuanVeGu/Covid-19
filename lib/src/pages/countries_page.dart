@@ -21,7 +21,7 @@ class _CountriesPageState extends State<CountriesPage> {
     _covidProvider = Provider.of<CovidProvider>(context);
 
     return Scaffold(
-      backgroundColor: Colors.grey.withOpacity(0.1),
+      backgroundColor: Color(0xff303841),
       body: SafeArea(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

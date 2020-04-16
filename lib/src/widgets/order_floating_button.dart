@@ -11,7 +11,7 @@ class OrderFloatingButton extends StatelessWidget {
     _covidProvider = Provider.of<CovidProvider>(context);
 
     return FloatingActionButton(
-      backgroundColor: Colors.red,
+      backgroundColor: Color(0xff00adb5),
       child: _covidProvider.order == 0
           ? Icon(FontAwesomeIcons.sortAmountUp)
           : Icon(FontAwesomeIcons.sortAmountDown),

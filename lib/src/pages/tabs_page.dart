@@ -10,6 +10,7 @@ class TabsPage extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        backgroundColor: Color(0xff3a4750),
         body: TabBarView(
           children: [
             CountriesPage(),
@@ -28,8 +29,8 @@ class TabsPage extends StatelessWidget {
             ),
           ],
           labelStyle: GoogleFonts.getFont('Montserrat'),
-          labelColor: Colors.redAccent,
-          unselectedLabelColor: Colors.grey,
+          labelColor: Color(0xff00adb5),
+          unselectedLabelColor: Color(0xffeeeeee),
           indicatorSize: TabBarIndicatorSize.label,
           indicatorColor: Colors.transparent,
         ),

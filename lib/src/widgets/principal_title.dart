@@ -22,6 +22,7 @@ class PrincipalTitle extends StatelessWidget {
             this.title,
             style: TextStyle(
               fontSize: 25.0,
+              color: Color(0xffeeeeee),
               fontWeight: FontWeight.bold,
             ),
           ),

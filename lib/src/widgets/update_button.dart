@@ -18,7 +18,7 @@ class UpdateButton extends StatelessWidget {
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.redAccent,
+            color: Color(0xff00adb5),
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(25.0),
               bottomLeft: Radius.circular(25.0),
@@ -37,7 +37,7 @@ class UpdateButton extends StatelessWidget {
                   ),
                   child: Icon(
                     FontAwesomeIcons.undo,
-                    color: Colors.white,
+                    color: Color(0xffeeeeee),
                     size: 20.0,
                   ),
                 ),

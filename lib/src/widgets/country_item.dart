@@ -10,11 +10,12 @@ class CountryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Color(0xff3a4750),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
       margin: EdgeInsets.all(8.0),
-      elevation: 4.0,
+      elevation: 2.0,
       child: Container(
         margin: EdgeInsets.all(10.0),
         child: Row(
@@ -23,9 +24,17 @@ class CountryItem extends StatelessWidget {
               countryCode: country.countryCode,
             ),
             SizedBox(width: 8.0),
-            Text(
-              country.country,
-              style: TextStyle(fontSize: 17.0),
+            Flexible(
+              child: Container(
+                child: Text(
+                  country.country,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 17.0,
+                    color: Color(0xffeeeeee),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
