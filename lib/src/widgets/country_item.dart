@@ -70,32 +70,75 @@ class CountryItem extends StatelessWidget {
                   ),
                   Column(
                     children: <Widget>[
-                      Text(TransformNumber()
-                          .changeNumberWithFormatCompactNonSymbol(
-                              country.totalConfirmed)),
-                      Text("Infectados"),
+                      Text(
+                        TransformNumber()
+                            .changeNumberWithFormatCompactNonSymbol(
+                                country.totalConfirmed),
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: size.width * 0.045,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "Infectados",
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: size.width * 0.035,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ],
                   ),
                   Column(
                     children: <Widget>[
-                      Text(TransformNumber()
-                          .changeNumberWithFormatCompactNonSymbol(
-                              country.totalDeaths)),
-                      Text("Muertes"),
+                      Text(
+                        TransformNumber()
+                            .changeNumberWithFormatCompactNonSymbol(
+                                country.totalDeaths),
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: size.width * 0.045,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "Muertes",
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: size.width * 0.035,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ],
                   ),
                   Column(
                     children: <Widget>[
-                      Text(TransformNumber()
-                          .changeNumberWithFormatCompactNonSymbol(
-                              country.totalRecovered)),
-                      Text("Recuperados"),
+                      Text(
+                        TransformNumber()
+                            .changeNumberWithFormatCompactNonSymbol(
+                                country.totalRecovered),
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: size.width * 0.045,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "Recuperados",
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: size.width * 0.035,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
-              SizedBox(height: 10.0),
+              SizedBox(height: size.height * 0.01),
               LastUpdate(lastUpdate: country.date),
+              SizedBox(height: size.height * 0.01),
             ],
           ),
         );

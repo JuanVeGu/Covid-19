@@ -11,6 +11,7 @@ class TabsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     _covidProvider = Provider.of<CovidProvider>(context);
+    final size = MediaQuery.of(context).size;
 
     return DefaultTabController(
       length: 2,
@@ -21,7 +22,7 @@ class TabsPage extends StatelessWidget {
                 child: Text(
                   "Cargando...",
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: size.width * 0.06,
                     color: Color(0xffeeeeee),
                     fontWeight: FontWeight.bold,
                   ),
@@ -36,11 +37,17 @@ class TabsPage extends StatelessWidget {
         bottomNavigationBar: TabBar(
           tabs: <Widget>[
             Tab(
-              icon: Icon(FontAwesomeIcons.globeAmericas, size: 30.0),
+              icon: Icon(
+                FontAwesomeIcons.globeAmericas,
+                size: size.width * 0.065,
+              ),
               text: "Paises",
             ),
             Tab(
-              icon: Icon(FontAwesomeIcons.chartBar, size: 30.0),
+              icon: Icon(
+                FontAwesomeIcons.chartBar,
+                size: size.width * 0.065,
+              ),
               text: "Estadísticas",
             ),
           ],

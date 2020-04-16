@@ -8,6 +8,8 @@ class PrincipalTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Padding(
       padding: EdgeInsets.only(left: 8.0, top: 15.0),
       child: Row(
@@ -15,13 +17,13 @@ class PrincipalTitle extends StatelessWidget {
           Icon(
             FontAwesomeIcons.virus,
             color: Colors.redAccent,
-            size: 45.0,
+            size: size.width * 0.12,
           ),
-          SizedBox(width: 10.0),
+          SizedBox(width: size.width * 0.03),
           Text(
             this.title,
             style: TextStyle(
-              fontSize: 25.0,
+              fontSize: size.width * 0.06,
               color: Color(0xffeeeeee),
               fontWeight: FontWeight.bold,
             ),
