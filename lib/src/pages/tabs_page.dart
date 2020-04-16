@@ -1,22 +1,38 @@
 import 'package:covid19/src/pages/countries_page.dart';
 import 'package:covid19/src/pages/statistics_page.dart';
+import 'package:covid19/src/providers/covid_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class TabsPage extends StatelessWidget {
+  CovidProvider _covidProvider;
   @override
   Widget build(BuildContext context) {
+    _covidProvider = Provider.of<CovidProvider>(context);
+
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         backgroundColor: Color(0xff3a4750),
-        body: TabBarView(
-          children: [
-            CountriesPage(),
-            StatisticsPage(),
-          ],
-        ),
+        body: _covidProvider.loading
+            ? Center(
+                child: Text(
+                  "Cargando...",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Color(0xffeeeeee),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
+            : TabBarView(
+                children: [
+                  CountriesPage(),
+                  StatisticsPage(),
+                ],
+              ),
         bottomNavigationBar: TabBar(
           tabs: <Widget>[
             Tab(

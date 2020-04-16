@@ -9,6 +9,7 @@ class CovidProvider with ChangeNotifier {
   Summary _summary = new Summary();
   Global _global = new Global();
   List<Country> _countries = List();
+  bool loading = false;
 
   Summary get summary => _summary;
   Global get global => _global;
@@ -20,11 +21,15 @@ class CovidProvider with ChangeNotifier {
   }
 
   getSummaryData() async {
+    loading = true;
+    notifyListeners();
+
     final res = await http.get('https://api.covid19api.com/summary');
 
     _summary = summaryFromJson(res.body);
     _global = _summary.global;
     _countries = _summary.countries;
+    loading = false;
 
     notifyListeners();
   }

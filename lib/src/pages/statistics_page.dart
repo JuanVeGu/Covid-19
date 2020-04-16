@@ -47,7 +47,9 @@ class StatisticsPage extends StatelessWidget {
               ],
             ),
             SizedBox(height: size.height * 0.03),
-            LastUpdate(),
+            LastUpdate(
+              lastUpdate: Provider.of<CovidProvider>(context).summary.date,
+            ),
           ],
         ),
       ),
